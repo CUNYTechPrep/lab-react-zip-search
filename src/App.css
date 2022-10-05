@@ -1,6 +1,4 @@
-.App-header {
-    background-color: #222;
-    padding: 20px;
-    color: white;
-    text-align: center;
+p {
+  margin: 2rem auto;
+  max-width: 40rem;
 }

@@ -1,0 +1,32 @@
+.form {
+  max-width: 40rem;
+  margin: 2rem auto;
+}
+
+.form label {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.form input {
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 4px;
+  outline: none;
+}
+
+.form input::placeholder {
+  color: #bbb;
+}
+
+.form .invalid {
+  border: 1.4px solid red !important;
+}
+
+.invalidMsg {
+  color: red;
+  font-style: italic;
+  margin-left: 10rem;
+  margin-top: 0;
+}
