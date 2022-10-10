@@ -4,3 +4,77 @@
     color: white;
     text-align: center;
 }
+
+#zip-code {
+    margin-top: 50px;
+    margin-right: -20px;
+    display: flex;
+}
+
+#zip-code label {
+    font-weight: bold;
+    font-size:x-large;
+    margin-left: -8px;
+}
+
+#zip-code input {
+    margin-left: 05px;
+    padding-right: 123px;
+    border-radius: 7px;
+    border: 1px solid grey;
+    outline: 0;
+    height: 35px;
+}
+
+
+#zip-code input:active  {
+    box-shadow: 0 0 20px rgb(145, 163, 235);
+    border:2px solid rgb(127, 127, 240);
+}
+
+#tab{
+    border: 1px solid rgb(202, 200, 200);
+    margin-top: 20px;
+    height: 150px;
+    border-radius: 5px;
+    font-family:'Roboto', sans-serif;  
+    box-shadow: 0px 0px 5px  grey;
+}
+
+#cityName{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    background-color: rgb(244, 245, 245); 
+    font-weight:bolder;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin:-0px -12px 0px -12px ;
+    text-shadow:0 0 1px black;
+}
+#info{
+    border: 1px solid rgb(202, 200,200);
+    background-color: white;
+    padding-top: 7px;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px; 
+    margin:-0px -12px 0px -12px ;
+    text-shadow:0 0 1px rgb(110, 102, 102);
+}
+
+ #zipOnly{
+    margin-top: 10px;
+    padding-top: 0px;
+    margin-left: 2px;
+    font-family:'Roboto', sans-serif;
+    justify-content:space-between;
+    box-shadow: 0px 0px 5px  grey;
+     border-radius: 2px;
+ }
+ #noResult{
+    margin-top: 10px;
+    text-align: center;
+    font-size: larger;
+    font-family: 'Silkscreen', cursive;
+ }
