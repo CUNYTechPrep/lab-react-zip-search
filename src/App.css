@@ -4,3 +4,8 @@
     color: white;
     text-align: center;
 }
+
+.divv {
+    border-color: gainsboro;
+    border-radius: 10px;
+}
