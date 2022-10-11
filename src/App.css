@@ -4,3 +4,19 @@
     color: white;
     text-align: center;
 }
+
+.border {
+    border-style: solid;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.border_two {
+    border-style: solid;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+h3 {
+    float: left;
+}
