@@ -4,3 +4,7 @@
     color: white;
     text-align: center;
 }
+
+input[type=text] {
+    width: 100%;
+  }
