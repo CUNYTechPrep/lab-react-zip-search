@@ -1,13 +1,42 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 
+class textInput extends Component { 
+  constructor(props) {
+    super(props); 
+    this.state = { 
+      valid: false,
+      code: " "
+  }; 
+  } 
+
+  render() {
+    return (<div>
+      {this.state.code}
+ </div>);
+  }
+  
+} 
+  
+let currentInput = textInput; 
+
+function inputChange(e, input) {
+  this.setState({[input]: e.target.value }) 
+} 
+
 function City(props) {
-  return <div>This is the City component</div>;
+  // How can I display the current code? Is it being updated properly?
+  return <div>{currentInput.code}</div> 
 }
 
+
+
 function ZipSearchField(props) {
-  return <div>This is the ZipSearchField component</div>;
-}
+  let value = "";
+  return (<input id = "zipcode" type="text"  onChange={(e) => currentInput.inputChange(e, 'code')}/>);
+} 
+
+
 
 function App() {
   return (
