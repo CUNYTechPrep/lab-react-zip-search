@@ -1,6 +1,42 @@
+*{
+    box-sizing: border-box;
+}
 .App-header {
     background-color: #222;
     padding: 20px;
     color: white;
     text-align: center;
+}
+
+.zip-search-field{
+    margin:48px 0;
+    display:block;
+}
+.zip-code{
+    display:inline-block;
+    width:100%;
+}
+.zip-input{
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+}
+.city-card{
+    margin-bottom: 60px;
+}
+.city-name{
+    background-color:rgba(0, 0, 0, 0.03);
+    padding:10px 20px;
+    font-size:16px;
+    margin-bottom: 0;
+}
+.card-body{
+    margin:20px;
 }
