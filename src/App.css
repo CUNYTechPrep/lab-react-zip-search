@@ -1,6 +1,16 @@
 .App-header {
-    background-color: #222;
-    padding: 20px;
-    color: white;
-    text-align: center;
+  background-color: #222;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.cityTitle {
+  background-image: linear-gradient(#f4f4f4, #e8e8e8);
+}
+
+.cityCard {
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #dddddd;
 }
