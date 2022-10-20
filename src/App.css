@@ -4,3 +4,13 @@
     color: white;
     text-align: center;
 }
+
+.city-box {
+    border: solid #dddddd 1px;
+    border-radius: 6px;
+}
+
+.city-box-header{
+    padding: 15px; 
+    background: #ededed;
+}
