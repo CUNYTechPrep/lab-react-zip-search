@@ -4,3 +4,24 @@
     color: white;
     text-align: center;
 }
+
+.box {
+    background-color: white;
+    width: 400px;
+    border: 1px solid black;
+    padding-left: 50px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-radius: 5px;
+}
+
+.header {
+    background-color: whitesmoke;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 400px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    
+}
