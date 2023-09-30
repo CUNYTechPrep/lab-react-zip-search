@@ -3,4 +3,35 @@
     padding: 20px;
     color: white;
     text-align: center;
+    
+}
+
+.button {
+    background-color: grey;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.dataBox {
+    border: 1px solid lightgrey;
+    box-shadow: 0 0 10px 1px lightgrey;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.city-state {
+    background-color: lightgrey;
+    padding: 6px 20px;
+    font-size: 16px;
+}
+
+.details {
+    padding: 10px 25px;
 }
