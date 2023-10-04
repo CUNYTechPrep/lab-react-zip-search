@@ -4,3 +4,24 @@
     color: white;
     text-align: center;
 }
+
+.city-card{
+    -moz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 3px #ccc;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+}
+
+.city-card h5{
+    background-color: #ececec;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 5px 0px 5px 10px
+}
+
+.city-card .list{
+    padding: 5px 0 5px 0;
+}
