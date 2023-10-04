@@ -4,3 +4,16 @@
     color: white;
     text-align: center;
 }
+
+.field-text {
+    padding-top: 35px;
+}
+
+.city-container-block {
+    background-color: rgb(146, 143, 143, .9);
+}
+
+.search-field,
+.wage-container {
+    padding-bottom: 35px;
+}
