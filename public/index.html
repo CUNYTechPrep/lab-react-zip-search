@@ -47,3 +47,26 @@
     -->
   </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zip Code and City Lookup</title>
+</head>
+<body>
+    <h1>Zip Code Lookup</h1>
+    <label for="zipCode">Enter Zip Code:</label>
+    <input type="text" id="zipCode">
+    <button onclick="searchByZipCode()">Search</button>
+
+    <h1>City Lookup</h1>
+    <label for="cityName">Enter City Name (in uppercase):</label>
+    <input type="text" id="cityName">
+    <button onclick="searchByCity()">Search</button>
+
+    <div id="result"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

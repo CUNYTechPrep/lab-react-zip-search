@@ -17,6 +17,7 @@ function App() {
       </div>
       <div className="mx-auto" style={{ maxWidth: 400 }}>
         <ZipSearchField />
+        
         <div>
           <City />
           <City />
