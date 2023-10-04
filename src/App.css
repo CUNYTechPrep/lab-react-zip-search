@@ -4,3 +4,14 @@
     color: white;
     text-align: center;
 }
+
+.city
+{
+    border: 2px solid black;
+    margin: 10px;
+}
+
+.zip
+{
+    margin: 10px;
+}
