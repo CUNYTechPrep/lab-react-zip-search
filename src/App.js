@@ -1,13 +1,7 @@
 import React from "react";
 import "./App.css";
-
-function City(props) {
-  return <div>This is the City component</div>;
-}
-
-function ZipSearchField(props) {
-  return <div>This is the ZipSearchField component</div>;
-}
+import City from "./City"
+import ZipSearchField from "./ZipSearchField";
 
 function App() {
   return (
@@ -17,10 +11,6 @@ function App() {
       </div>
       <div className="mx-auto" style={{ maxWidth: 400 }}>
         <ZipSearchField />
-        <div>
-          <City />
-          <City />
-        </div>
       </div>
     </div>
   );
