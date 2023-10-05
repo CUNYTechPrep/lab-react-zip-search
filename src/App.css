@@ -4,3 +4,21 @@
     color: white;
     text-align: center;
 }
+
+.cityHeader {
+    background-color: lightgray;
+    text-align: center;
+}
+
+.cityBody {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cityCont {
+    border: #222 solid 1px;
+    margin-top: 1vh;
+}
+
+#zipInput {
+    margin: 1vh;
+}
