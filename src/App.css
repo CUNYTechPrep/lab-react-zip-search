@@ -4,3 +4,23 @@
     color: white;
     text-align: center;
 }
+
+.inputContainer{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#ZipCode{
+    width: 275px;
+    height: 35px;
+}
+
+label{
+    padding-right: 10px;
+}
+
+.city-info{
+    border: 2px solid black;
+    margin-bottom: 20px;
+    padding:10px;
+}
