@@ -4,3 +4,29 @@
     color: white;
     text-align: center;
 }
+
+.valid-zipcode-container {
+    border: solid 1px black;
+    list-style-type: none;
+    padding: 20px;
+    margin: 20px 70px;
+}
+
+#header_zip {
+    background-color: gray;
+    margin: 0;
+    text-align: center;
+}
+
+#zipform {
+    display: inline-block;
+}
+
+#zip {
+    display: inline-block;
+    margin: 0px 70px;
+}
+
+label{
+    margin: 0px 70px;
+}
