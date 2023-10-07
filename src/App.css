@@ -4,3 +4,40 @@
     color: white;
     text-align: center;
 }
+.card {
+    margin: 15px 0;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    border-radius: 5px;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .container {
+    padding: 20px;
+  }
+  .no-results {
+    padding: 30px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #888;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    margin-top: 15px;
+  }
+  
+  .no-results:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  .center-content {
+    max-width: 600px; 
+    margin: 0 auto;
+  }
+  .zip-input {
+    margin-bottom: 20px;
+  }
