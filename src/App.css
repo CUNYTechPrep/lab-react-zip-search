@@ -1,6 +1,58 @@
 .App-header {
-    background-color: #222;
-    padding: 20px;
-    color: white;
-    text-align: center;
+  background-color: #222;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.searchField {
+  border-radius: 7px;
+  padding: 5px;
+  border: 1px solid lightgray;
+  height: 35px;
+  margin-top: 5px;
+  margin-bottom: 50px;
+  outline: none;
+}
+
+.searchField:focus {
+  box-shadow: 5px 5px 5px 5px lightblue;
+}
+
+.fullZip {
+  font-size: 16px;
+  margin-top: 50px;
+  padding: 0;
+}
+
+.tableContainer {
+  border: 1px solid lightgray;
+  border-radius: 7px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+table {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  font-weight: normal;
+  padding: 8px 16px;
+  border-bottom: 1px solid lightgray;
+  background: lightgray;
+}
+
+td {
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+li {
+  line-height: 7px;
 }
