@@ -1,6 +1,25 @@
 .App-header {
-    background-color: #222;
-    padding: 20px;
-    color: white;
-    text-align: center;
+  background-color: #222;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.box {
+  width: 400px;
+  border: 1px solid lightgrey;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.header {
+  text-align: center;
+  font-weight: bold;
+  background-color: rgba(211, 211, 211, 0.138);
+  padding: 10px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.list {
+  margin: 15px;
 }
