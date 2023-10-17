@@ -4,3 +4,17 @@
     color: white;
     text-align: center;
 }
+
+#heading{
+    background-color: rgb(211, 207, 207);
+    padding: 5px;
+    padding-left:10px;
+    margin:26px 0 0 0;
+    border: solid;
+    border-color: rgb(197, 194, 194);
+}
+
+#body{
+    border: solid;
+    border-color: rgb(197, 194, 194);
+}
