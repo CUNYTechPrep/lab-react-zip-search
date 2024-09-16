@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 
 function City(props) {
-  return <div class="card mb-5">
+  return <div className="card mb-5">
     <div className="card-header">{props.data.City} , {props.data.State}</div>
     <div className="card-body">
       <ul>
@@ -18,7 +18,7 @@ function City(props) {
 function ZipSearchField(props) {
 
   const zipChanged = async (zip) => {
-    if (zip.length === 5) {
+    if (zip.length === 5 && /^\d+$/.test(zip)) {
       try{
         const response = await fetch(`https://ctp-zip-code-api.onrender.com/zip/${zip}`);
         const data = await response.json();
@@ -35,10 +35,10 @@ function ZipSearchField(props) {
   }
 
   return <div className="my-5">
-          <label for="zipcode" class="custom-cursor-default-hover">Zip Code:</label>
+          <label htmlFor="zipcode" className="custom-cursor-default-hover">Zip Code:</label>
           <input 
             id="zipcode"
-            class="form-control"
+            className="form-control"
             onChange={e => zipChanged(e.target.value)}
             type="text"
             placeholder="Try 10016"
