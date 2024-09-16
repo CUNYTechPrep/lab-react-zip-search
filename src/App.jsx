@@ -2,14 +2,16 @@ import { useState } from "react";
 import "./App.css";
 
 function City(props) {
-  return <div>
-    <h2>{props.data.City}</h2>
-    <ul>
-      <li>State: {props.data.State}</li>
-      <li>Location: ({props.data.Lat}, {props.data.Long})</li>
-      <li>Population (estimated): {props.data.EstimatedPopulation}</li>
-      <li>Total Wages: {props.data.TotalWages}</li>
-    </ul>
+  return <div class="card mb-5">
+    <div className="card-header">{props.data.City} , {props.data.State}</div>
+    <div className="card-body">
+      <ul>
+        <li>State: {props.data.State}</li>
+        <li>Location: ({props.data.Lat}, {props.data.Long})</li>
+        <li>Population (estimated): {props.data.EstimatedPopulation}</li>
+        <li>Total Wages: {props.data.TotalWages}</li>
+      </ul>
+    </div>
   </div>;
 }
 
@@ -32,9 +34,11 @@ function ZipSearchField(props) {
     }
   }
 
-  return <div>
-          <label>Zip Code:</label>
+  return <div className="my-5">
+          <label for="zipcode" class="custom-cursor-default-hover">Zip Code:</label>
           <input 
+            id="zipcode"
+            class="form-control"
             onChange={e => zipChanged(e.target.value)}
             type="text"
             placeholder="Try 10016"
@@ -57,7 +61,7 @@ function App() {
               <City key={index} data={city} />
             ))
           ) : (
-            <div>No Results</div>
+            <strong>No results found</strong>
           )}
         </div>
       </div>
