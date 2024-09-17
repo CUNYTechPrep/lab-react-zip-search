@@ -46,6 +46,9 @@
 .city-container h2 {
   font-size: 1.5rem;
   margin-bottom: 10px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .city-container ul {
