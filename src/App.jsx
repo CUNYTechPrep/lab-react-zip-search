@@ -26,14 +26,14 @@ function City({ city }) {
 }
 
 function ZipSearchField({ onSearch }) {
-  const [zipCode, setZipCode] = useState("");
+  const [zipCode, setZipCode] = useState(""); // we need to track the zipcode
 
   const handleInputChange = (event) => {
-    const zip = event.target.value;
-    setZipCode(zip);
+    const zip = event.target.value; //this retrieves what the user types
+    setZipCode(zip); //updates zipcode
 
     if (zip.length === 5) {
-      onSearch(zip);
+      onSearch(zip); //triggers an API call to fetch zip code using the prop
     }
   };
 
@@ -56,7 +56,7 @@ function ZipSearchField({ onSearch }) {
 
 function App() {
   const [cityData, setCityData] = useState([]);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
   //fetching using await/asynch
   const fetchCityData = async (zip) => {
     try {
@@ -83,12 +83,9 @@ function App() {
       <div className="mx-auto" style={{ maxWidth: 400 }}>
         <ZipSearchField onSearch={fetchCityData} />
         <div>
-          {error && <p>{error}</p>}
-
-          {cityData.length > 0 &&
-            cityData.map((city, index) => <City key={index} city={city} />)}
-
-          {!error && cityData.length === 0 && <p>No results</p>}
+          {cityData.map((city, index) => (
+            <City key={index} city={city} />
+          ))}
         </div>
       </div>
     </div>
