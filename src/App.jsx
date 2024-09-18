@@ -25,7 +25,7 @@ function ZipSearchField(props) {
         id="zip-code"
         type="text"
         onChange={(e) => {
-          props.onZipChange(e.target.value);
+          props.onZipChange(e.target.value); //updates state in App
         }}
       ></input>
     </>
@@ -38,12 +38,14 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       if (zipCode.length === 5) {
+        //only request if valid zip
         const response = await fetch(
           "https://ctp-zip-code-api.onrender.com/zip/" + zipCode
         );
         const data = await response.json();
         setZipData(data);
       } else {
+        //invalid zip empty zipData
         setZipData([]);
       }
     };
@@ -58,9 +60,11 @@ function App() {
       <div className="mx-auto" style={{ maxWidth: 400 }}>
         <ZipSearchField onZipChange={setZipCode} />
         <div>
-          {zipData.map((info) => (
-            <City {...info} key={info.RecordNumber} />
-          ))}
+          {zipData.length === 0 ? ( //empty results
+            <strong>No results found</strong>
+          ) : (
+            zipData.map((info) => <City {...info} key={info.RecordNumber} />)
+          )}
         </div>
       </div>
     </div>
