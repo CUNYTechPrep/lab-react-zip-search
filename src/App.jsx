@@ -2,7 +2,23 @@ import { useState } from "react";
 import "./App.css";
 
 function City(props) {
-  return <div>This is the City component</div>;
+  return (
+    <>
+      <div>
+        <h2>
+          {props.City}, {props.State}
+        </h2>
+        <ul>
+          <li>State: {props.State}</li>
+          <li>
+            Location: ({props.Lat}, {props.Long})
+          </li>
+          <li>Population (estimated): {props.EstimatedPopulation}</li>
+          <li>Total Wages: {props.TotalWages}</li>
+        </ul>
+      </div>
+    </>
+  );
 }
 
 function ZipSearchField(props) {
@@ -48,7 +64,7 @@ function ZipSearchField(props) {
         </form>
       </div>
       {cities.map((city) => (
-        <City />
+        <City key={city.RecordNumber} {...city} />
       ))}
     </>
   );
@@ -62,10 +78,6 @@ function App() {
       </div>
       <div className="mx-auto" style={{ maxWidth: 400 }}>
         <ZipSearchField />
-        <div>
-          <City />
-          <City />
-        </div>
       </div>
     </div>
   );
