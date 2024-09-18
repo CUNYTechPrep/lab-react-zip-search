@@ -7,6 +7,8 @@ function City(props) {
 
 function ZipSearchField(props) {
   const [inputValue, setInputValue] = useState("");
+  const [cities, setCities] = useState([]);
+
   async function handleInputChange(event) {
     setInputValue(event.target.value);
     // Check if valid zipcode
@@ -18,24 +20,37 @@ function ZipSearchField(props) {
       let response = await fetch(baseURL + endpoint);
       let body = await response.json();
       console.log("Success", body);
+
+      let citiesArr = [];
+      body.forEach((city) => {
+        citiesArr.push(city);
+      });
+
+      setCities(citiesArr);
     } catch (error) {
       console.error("Error", error);
     }
   }
 
   return (
-    <div>
-      <form method="GET">
-        <label htmlFor="zipcode">Zip Code: </label>
-        <input
-          type="text"
-          name="zipcode"
-          id="zipcode"
-          placeholder="Try 10016"
-          onChange={handleInputChange}
-        />
-      </form>
-    </div>
+    <>
+      <div>
+        <form method="GET">
+          <label htmlFor="zipcode">Zip Code: </label>
+          <input
+            type="text"
+            name="zipcode"
+            id="zipcode"
+            placeholder="Try 10016"
+            onChange={handleInputChange}
+            value={inputValue}
+          />
+        </form>
+      </div>
+      {cities.map((city) => (
+        <City />
+      ))}
+    </>
   );
 }
 
