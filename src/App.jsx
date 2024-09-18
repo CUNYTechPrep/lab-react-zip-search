@@ -6,7 +6,23 @@ function City(props) {
 }
 
 function ZipSearchField(props) {
-  return <div>This is the ZipSearchField component</div>;
+  const [input, setInput] = useState('');
+
+  const handleChange = (event) => {
+    setInput(event.target.value);
+  }
+
+  return <>
+    <span> Zip Code: </span>
+    <form class = "search-bar">
+      <input
+        type="text"
+        value={inputValue}
+        onChange = {handleChange}
+        placeholder = "Enter some text"
+      />
+    </form>
+  </>;
 }
 
 function App() {
