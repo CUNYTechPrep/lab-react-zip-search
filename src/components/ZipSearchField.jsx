@@ -1,45 +1,49 @@
-//pay attention to the semantics of the names, it will give insight into how things work
 export default function ZipSearchField(props) {
 
-    // const [cityList,setCityList]=useState([])
-    // const zipcode ="";
     const zipcodeApi = async (zipcode) => {
-        // console.log("Inside Async function")
+        // put try catch block here
+        // API_BASE_URL specifies the API Base URL
         const API_BASE_URL = "https://ctp-zip-code-api.onrender.com";
-        const response = await fetch(API_BASE_URL + "/zip/" + zipcode);
-        const body = await response.json();
-
-        // console.log(body);
-        //Why does the following line cause the function to call itself infinitely
-        props.setCityList(body);
-
+        //try block to test if api call gives valid response or error
+        try{
+            // using a concatonated string to create the APU URL and then use fetch to call the API
+            const response = await fetch(API_BASE_URL + "/zip/" + zipcode);
+            // var body will store the reponses
+            const body = await response.json();   
+            // we passed the setCityList function so we can call the prop function to set the city list
+            props.setCityList(body);
+            // if an error is caught change the cityList to an empty array and show the "results not found text"
+        }catch(error){
+            document.getElementById("no-results").style.display = "block";
+            props.setCityList([]);
+        }
+       
     }
 
-    //look into ref
-    //Should this code below be the app function or in this function
-    //I am guessing the app function so it can pass the value as a prop
-
-    //using states will cause the app to re render
-
-    var changed = false;
+    // this function will handle the input each time the input changes in the ZipSearchField
     const handleChange = (event) => {
+        // Store the value of the event in var value
         const value = event.target.value;
+        // We only need to call the Api if the length is 5
         if (value.length == 5) {
+            //hide the text "results not found" when calling the api
             document.getElementById("no-results").style.display = "none";
+            // call the zipcode api
             zipcodeApi(value);
-            changed = false;
         } else {
+            // if the value is not equal to length 5 then we display nothing
             props.setCityList([]);
+            // display the text "results not found"
             document.getElementById("no-results").style.display = "block";
-
-
         }
     };
-    //this statement is causing the zipcode to rerender everytime the function is run
 
     return <div>
         <p>Zipcode:</p>
         <input
+            // put a place holder value for users to try  
+            placeholder="Try 10016"
+            // every time the state is changed the function handleChange should be updated
             onChange={handleChange}
         />
     </div>;
