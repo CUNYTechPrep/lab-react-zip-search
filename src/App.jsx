@@ -36,12 +36,12 @@ function ZipSearchField(props) {
       let response = await fetch(baseURL + endpoint);
       let body = await response.json();
       console.log("Success", body);
-
+      // Store cities objects in temporary array
       let citiesArr = [];
       body.forEach((city) => {
         citiesArr.push(city);
       });
-
+      // Update state with new cities
       setCities(citiesArr);
     } catch (error) {
       console.error("Error", error);
@@ -63,9 +63,11 @@ function ZipSearchField(props) {
           />
         </form>
       </div>
-      {cities.map((city) => (
-        <City key={city.RecordNumber} {...city} />
-      ))}
+      {!cities.length ? (
+        <div>No Results</div>
+      ) : (
+        cities.map((city) => <City key={city.RecordNumber} {...city} />)
+      )}
     </>
   );
 }
