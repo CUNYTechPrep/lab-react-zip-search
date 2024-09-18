@@ -2,20 +2,30 @@ import { useState, useEffect } from "react";
 import "./App.css";
 
 function City(props) {
-  return <div>This is the City component</div>;
+  return (
+    <div>
+      {props.LocationText}
+      <ul>
+        <li>State: {props.State}</li>
+        <li>
+          Location: {props.Lat},{props.Long}
+        </li>
+        <li>Population (estimated): {props.EstimatedPopulation}</li>
+        <li>Total Wages: {props.TotalWages}</li>
+      </ul>
+    </div>
+  );
 }
 
 function ZipSearchField(props) {
   return (
     <>
-      <label for="zip-code">Zip Code</label>
+      <label htmlFor="zip-code">Zip Code</label>
       <input
         id="zip-code"
         type="text"
         onChange={(e) => {
-          if (e.target.value.length === 5) {
-            props.onZipChange(e.target.value);
-          }
+          props.onZipChange(e.target.value);
         }}
       ></input>
     </>
@@ -23,19 +33,22 @@ function ZipSearchField(props) {
 }
 
 function App() {
-  const [zipCode, setZipCode] = useState(0);
+  const [zipCode, setZipCode] = useState();
   const [zipData, setZipData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(
-        "https://ctp-zip-code-api.onrender.com/zip/" + zipCode
-      );
-      const data = await response.json();
-      setZipData(data);
+      if (zipCode.length === 5) {
+        const response = await fetch(
+          "https://ctp-zip-code-api.onrender.com/zip/" + zipCode
+        );
+        const data = await response.json();
+        setZipData(data);
+      } else {
+        setZipData([]);
+      }
     };
     fetchData();
     console.log(zipData);
-    console.log(zipCode, "- Has changed");
   }, [zipCode]);
   return (
     <div className="App">
@@ -45,8 +58,9 @@ function App() {
       <div className="mx-auto" style={{ maxWidth: 400 }}>
         <ZipSearchField onZipChange={setZipCode} />
         <div>
-          <City />
-          <City />
+          {zipData.map((info) => (
+            <City {...info} key={info.RecordNumber} />
+          ))}
         </div>
       </div>
     </div>
