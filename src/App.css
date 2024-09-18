@@ -4,3 +4,43 @@
     color: white;
     text-align: center;
 }
+.user-input {
+    text-align: left;
+    /* padding-left: 30%; */
+    padding-top: 50px;
+    /* padding-bottom: 50px; */
+    /* padding-right: 30%; */
+    
+}
+.city{
+    /* border: 1px solid black; */
+    color:purple;
+    padding-top: 50px;
+}
+.one{
+    color: black;
+    list-style-type: none;
+    border: 1px solid lightgray;
+    background-color: lavenderblush;
+    border-radius: 10px;
+    /* display: inline-block;  */
+    margin: 0 auto;
+}   
+.two {
+    color: black;
+    border-top: 1px solid lightgray;
+    background-color: white;
+    padding: 20px 40px;
+   
+    /* padding-bottom: 20px; */
+}
+.title {
+    padding: 10px;
+}
+.search-bar{
+    border-radius: 20px;
+    display: inline-block;
+}
+.search-word {
+    padding: 5px;
+}
