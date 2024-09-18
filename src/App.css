@@ -1,6 +1,76 @@
+/* App.css */
+
 .App-header {
     background-color: #222;
     padding: 20px;
     color: white;
     text-align: center;
+    font-family: Arial, sans-serif;
+    border-bottom: 4px solid #ff9800;
+}
+
+.city-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.city-container h2 {
+    color: #333;
+    font-size: 1.5em;
+}
+
+.city-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.city-container li {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #666;
+}
+
+.city-container strong {
+    color: #333;
+}
+
+.zip-container {
+    margin: 20px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.zip-container input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 250px;
+    box-sizing: border-box;
+}
+
+.zip-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+.App {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
 }
