@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 
 function City(props) {
@@ -28,10 +28,7 @@ function ZipSearchField(props) {
         name='zip-search-field'
         placeholder="Try 10016"
         maxLength="5"
-        onChange={(e) => {
-          const zipcode = e.target.value;
-          props.setZipcode(zipcode);
-        }}
+        onChange={props.handleOnChange}
       >
       </input>
     </div>
@@ -47,23 +44,25 @@ async function fetchCityData(zipcode, setCityData) {
   }
   else {
     try {
-      await fetch(url)
-        .then((res) => res.json())
-        .then((data) => setCityData(data));
+      const res = await fetch(url);
+      const body = await res.json();
+      setCityData(body);
     }
     catch(err) {
       console.log('Error: ', err);
+      setCityData([]);
     }
   }
 }
 
 function App() {
-  const [zipcode, setZipcode] = useState('');
   const [cityData, setCityData] = useState([]);
 
-  useEffect(() => {
-    fetchCityData(zipcode, setCityData);
-  }, [zipcode])
+  const handleZipCodeChange = (e) => {
+    const newZipCode = e.target.value;
+    
+    fetchCityData(newZipCode, setCityData);
+  };
 
   return (
     <div className="App">
@@ -71,7 +70,7 @@ function App() {
         <h1>Zip Code Search</h1>
       </div>
       <div className="mx-auto" style={{ maxWidth: 400 }}>
-        <ZipSearchField setZipcode={setZipcode}/>
+        <ZipSearchField handleOnChange={handleZipCodeChange}/>
         <div>
           {cityData.length === 0 ? (
             <strong>No results found</strong>
