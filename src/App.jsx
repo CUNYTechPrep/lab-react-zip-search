@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-function City({ city }) {
+function City({ cityData }) {
   return (
     <div className="city-box">
       <h3>
-        {city.City}, {city.State}
+        {cityData.City}, {cityData.State}
       </h3>
-      <p>State: {city.State}</p>
+      <p>State: {cityData.State}</p>
       <p>
-        Location: ({city.Lat}, {city.Long})
+        Location: ({cityData.Lat}, {cityData.Long})
       </p>
-      <p>Population (estimated): {city.EstimatedPopulation}</p>
-      <p>Total Wages: {city.TotalWages}</p>
+      <p>Population (estimated): {cityData.EstimatedPopulation}</p>
+      <p>Total Wages: {cityData.TotalWages}</p>
     </div>
   );
 }
@@ -36,26 +36,28 @@ function App() {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    if (zipCode.length === 5) {
-      fetch(`https://ctp-zip-code-api.onrender.com/zip/${zipCode}`)
-        .then((response) => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            throw new Error("No results found");
-          }
-        })
-        .then((data) => {
-          setCities(data);
-          setError(false);
-        })
-        .catch(() => {
-          setCities([]);
-          setError(true);
-        });
-    } else {
-      setCities([]);
-    }
+    const fetchCityData = async () => {
+      if (zipCode.length !== 5) {
+        setCities([]);
+        return;
+      }
+
+      try {
+        const response = await fetch(
+          `https://ctp-zip-code-api.onrender.com/zip/${zipCode}`
+        );
+        if (!response.ok) throw new Error("No results found");
+
+        const data = await response.json();
+        setCities(data);
+        setError(false);
+      } catch {
+        setCities([]);
+        setError(true);
+      }
+    };
+
+    fetchCityData();
   }, [zipCode]);
 
   return (
@@ -70,7 +72,7 @@ function App() {
         ) : (
           <div>
             {cities.map((city) => (
-              <City key={city.RecordNumber} city={city} />
+              <City key={city.RecordNumber} cityData={city} />
             ))}
           </div>
         )}
