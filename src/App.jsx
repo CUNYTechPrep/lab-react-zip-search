@@ -28,13 +28,14 @@ function ZipSearchField({ onZipChange }) {
     <>
       <form>
         <div class="form-group row justify-content-center">
-          Zip Code :
+          Zip Code:
           <div class="col-sm-4">
             <input
               type="text"
               class="form-control"
               id="zipInput"
-              placeholder="Enter Zip Code"
+              placeholder="Type 10016"
+              onChange={(e) => onZipChange(e.target.value)}
             />
           </div>
         </div>
