@@ -3,4 +3,31 @@
     padding: 20px;
     color: white;
     text-align: center;
-}
+  }
+  
+  .zip-search-field {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .zip-search-field input {
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  .city-result {
+    margin: 25px 0;
+    padding: 10px;
+  }
+
+  
+  .city-result h3 {
+    font-size: 18px;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+  }
+  
