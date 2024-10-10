@@ -4,3 +4,20 @@
     color: white;
     text-align: center;
 }
+.label{
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.zipSearchField{
+    margin-top: 20px;
+}
+.city{
+    background-color: rgb(204 205 203);
+    padding-left: 10px;
+    font-weight: 500;
+}
+.fields{
+    padding: 10px 60px 10px 60px;
+    font-weight:500 ;
+}
