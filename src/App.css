@@ -3,4 +3,20 @@
     padding: 20px;
     color: white;
     text-align: center;
+    
+}
+.city{
+    margin-top: 40px;
+    border: solid;
+    border-radius: 5px;
+    border-color: #c1c1c1;
+}
+.city-header{
+    padding:20px;
+    background-color: #e9e6e6;
+    border-color: #c1c1c1;
+    border-bottom-style: solid;
+}
+.city-body{
+    margin:20px;
 }
