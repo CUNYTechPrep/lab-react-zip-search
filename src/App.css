@@ -1,6 +1,18 @@
 .App-header {
-    background-color: #222;
+    background-color: #0ba215;
     padding: 20px;
-    color: white;
+    color: whitesmoke;
     text-align: center;
+}
+
+.card-title{
+    background-color: rgb(35, 122, 74);
+    color: rgb(248, 247, 161);
+}
+.App {
+    background-color: rgb(195, 253, 157);
+    padding: 20px;
+  }
+.card {
+    background-color:rgb(239, 243, 223);
 }
