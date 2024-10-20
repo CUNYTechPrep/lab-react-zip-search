@@ -1,6 +1,69 @@
 .App-header {
-    background-color: #222;
-    padding: 20px;
-    color: white;
-    text-align: center;
+  background-color: #222;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.App-header h1 {
+  font-weight: 500;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  margin-bottom: 1rem;
+}
+
+/* Zip Code */
+
+.zip-code-label {
+  border-radius: 5rem;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+/* City Display */
+
+.city {
+  border: rgb(46, 45, 45) 1px solid;
+  margin-top: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.city-header {
+  background-color: rgb(236, 234, 234);
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-bottom: 1px solid black;
+}
+
+.city-body {
+  padding: 1rem;
+}
+
+.city-body ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.city-body li {
+  margin-bottom: 0.5rem;
 }
